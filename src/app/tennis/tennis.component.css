@@ -1,0 +1,164 @@
+.tennis-frame {
+    width: 800px;
+    padding: 50px 100px;
+    margin: 10px auto;
+    border: 4px solid #fff;
+}
+
+.court {
+    width: 605px;
+    height: 350px;
+    border: 4px solid #fff;
+    position: relative;
+}
+
+.court:before {
+    content: "";
+    display: block;
+    width: 4px;
+    height: 345px;
+    background: #fff;
+    position: absolute;
+    left: 298px;
+    top: 0;
+}
+
+.court:after {
+    content: "";
+    display: block;
+    width: 600px;
+    height: 300px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: -1;
+}
+
+.court .rackets {
+    position: relative;
+    top: 145px;
+}
+
+.court .racket-left img,
+.court .racket-right img {
+    width: 100px;
+    height: 100px;
+    position: relative;
+    right: 6px;
+}
+
+.court .racket-left,
+.court .racket-right {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    background: #dae6fb;
+    border-radius: 10px;
+    box-shadow: 0 5px #3f5171;
+    cursor: pointer;
+    top: -5px;
+}
+
+.court .racket-left:hover,
+.court .racket-right:hover {
+    background: #b2c3e0;
+    box-shadow: 0 5px #283853;
+    top: -4px;
+}
+
+.court .racket-left {
+    margin-left: 100px;
+}
+
+.court .racket-right {
+    margin-left: 400px;
+}
+
+button[disabled] {
+    cursor: not-allowed !important;
+    filter: alpha(opacity=65);
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    opacity: .65;
+}
+
+.total-sets {
+    text-align: center;
+    padding: 0 50px;
+    font-size: 1.5em;
+}
+
+.racketwrapper {
+    text-align: center;
+    padding: 40px 0px;
+}
+
+.racketbtn {
+    padding: 25px;
+}
+
+.racketbtn img {
+    height: 100px;
+    width: auto;
+}
+
+.whiteborder {
+    border: 5px solid white;
+}
+
+.namewrapper {
+    padding: 10px;
+    font-size: 2em;
+    text-align: center;
+}
+
+.messageboard {
+    text-align: center;
+    font-size: 1.25em;
+    padding: 10px;
+    font-family: 'Orbitron', 'Courier new', Courier, sans-serif;
+    background-color: #003c77;
+    color: rgb(255, 247, 0);
+    border: 2px solid black;
+}
+
+.score-table-wrapper {
+    margin: auto;
+}
+
+.score-table {
+    font-family: 'Orbitron', 'Courier new', Courier, sans-serif;
+    margin: 5px auto;
+    background-color: #003c77;
+    border-collapse: collapse;
+    color: rgb(255, 247, 0);
+    text-align: center;
+    font-size: 1.25em;
+}
+
+.count-down {
+    font-size: 0.5em;
+    text-align: left;
+    display: block;
+    margin: 0 10px;
+}
+
+.score-table td {
+    border: 2px solid black;
+    padding: 5px;
+    min-width: 50px;
+}
+
+td.spacer {
+    background-color: black;
+    max-width: 15px;
+}
+
+td.setheader {
+    font-size: 0.5em;
+    text-transform: uppercase;
+}
+
+tr.middlespacer td {
+    padding: 0px;
+}

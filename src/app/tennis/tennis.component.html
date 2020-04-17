@@ -1,0 +1,79 @@
+<div class="container">
+    <!-- Score Table -->
+    <div class="row">
+        <div class="col-xs-12 score-table-wrapper">
+            <table class="score-table">
+                <tr>
+                    <td>{{game.players[0].name}}</td>
+                    <td *ngFor="let set of game.sets">{{ set[0] }}</td>
+                    <td class="spacer">&nbsp;</td>
+                    <td>
+                        <span [hidden]="game.players[0].advantage || game.players[1].advantage">{{game.players[0].score}}</span>
+                        <span *ngIf="game.players[0].advantage">A</span>
+                    </td>
+                </tr>
+                <tr class="middlespacer">
+                    <td></td>
+                    <td *ngFor="let set of game.sets; let idx=index" class="setheader">SET {{ idx + 1 }}</td>
+                    <td class="spacer">&nbsp;</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>{{game.players[1].name}}</td>
+                    <td *ngFor="let set of game.sets">{{ set[1] }}</td>
+                    <td class="spacer">&nbsp;</td>
+                    <td>
+                        <span [hidden]="game.players[0].advantage || game.players[1].advantage">{{game.players[1].score}}</span>
+                        <span *ngIf="game.players[1].advantage ">A</span>
+                    </td>
+                </tr>
+                <tr>
+                    <td colspan="100%">
+                        <span>&nbsp;</span>
+                        <span *ngIf="game.deuce">DEUCE</span>
+                        <span *ngIf="game.tiebreak">TIE BREAK</span>
+                        <span *ngIf="game.finished">Congratulations: {{game.winner.name}} WON!</span>
+                    </td>
+                </tr>
+            </table>
+        </div>
+    </div>
+
+    <!-- Tennis court placeholder -->
+    <div class="row tennis-frame">
+        <div class="court">
+            <div class="rackets">
+                <button [disabled]="!game.started" (click)="game.scorePoint(0)" class="racket-left">
+                  <img src='/assets/racket.svg' />
+                </button>
+                <button [disabled]="!game.started" (click)="game.scorePoint(1)" class="racket-right">
+                  <img src='/assets/racket.svg' />
+              </button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!-- Game settings -->
+<div class="container " style="margin-top:10px">
+    <div class="row justify-content-md-center">
+        <div class="col-xs-6 total-sets">
+            <div class="btn-group btn-group-toggle" data-toggle="buttons">
+                <label class="btn btn-success active" [class.active]="threeSets.checked">
+                  <input #threeSets type="radio" name="options" id="threeSets" [(ngModel)]="game.totalsets" value="3" checked> 3 Sets
+                </label>
+                <label class="btn btn-success" [class.active]="fiveSets.checked">
+                  <input #fiveSets type="radio" name="options" id="fiveSets" [(ngModel)]="game.totalsets" value="5"> 5 Sets
+                </label>
+            </div>
+        </div>
+        <div class="col-xs-6">
+            <button type="button" class="btn btn-warning" *ngIf="!game.started" (click)="this.game.startGame();">
+              PLAY
+            </button>
+            <button type="button" class="btn btn-danger" *ngIf="game.started" (click)="setUpNewGame(true)">
+              REPLAY
+            </button>
+        </div>
+    </div>
+</div>

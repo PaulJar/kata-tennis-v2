@@ -1,0 +1,9 @@
+@import "~bootstrap/dist/css/bootstrap.css";
+@import "~font-awesome/css/font-awesome.css";
+@import url(https://fonts.googleapis.com/css?family=Orbitron);
+h5.app-title {
+    text-align: left;
+    color: white !Important;
+    padding: 5px 10px;
+    margin: 0;
+}
