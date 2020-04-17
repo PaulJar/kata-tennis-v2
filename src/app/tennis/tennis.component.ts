@@ -20,8 +20,8 @@ export class TennisComponent implements OnInit {
 
   setUpNewGame(autoplay) {
     this.players = [
-      new PlayerModel('R. Federer'),
-      new PlayerModel('N. Djokovic')
+      new PlayerModel('P. Jardel'),
+      new PlayerModel('H. Le Teo')
     ];
     this.game = new MatchModel();
     this.game.players = this.players;
